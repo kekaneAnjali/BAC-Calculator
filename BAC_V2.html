@@ -1,0 +1,140 @@
+
+<!---Create a Blood Alcohol Content (BAC) calculator using forms and events. This form should also use HTML5 form elements and be accessible. 
+	(10 points)
+
+The calculations go as follows:
+
+Determine liquid ounces of alcohol consumed.
+1 beer = .54 liquid ounces of alcohol
+1 glass of wine = .6 liquid ounces of alcohol
+1 shot = .6 liquid ounces of alcohol
+Multiple liquid ounces of alcohol by 7.5 (average alcohol absorption rate)
+Divide by weight (lbs) to determine BAC
+Subtract 0.015 for each hour since first drink
+Round percentage to 3 decimal places (ex. “0.080%”)-->
+
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Blood Alcohol Calculater Lab</title>
+<style>
+	td, th {
+		text-align: right;	
+	}	
+
+	.centerCell {
+		text-align: center;	
+	}
+	
+	.leftCell {
+		text-align: left;	
+	}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+
+<script src="BAC.js"></script>
+
+</head>
+<h1>Blood Alcohol Calculator</h1>
+<body>
+<table width="500">
+	<!-- The table header row -->
+	<tr>
+		<th class="centerCell">Quantity</th>
+		<th class="leftCell">Drink</th>
+		<th>Alcohol qty</th>
+		<th>Total Alcohol</th>
+	</tr>
+    
+    <!-- Product 1 row -->
+	<tr>
+		<td class="centerCell">
+        	<input type="number" min="0" step="1" class="qtyInput" id="qtyBeer" value="0">
+      	</td>
+		<td class="leftCell"> Beer
+       	  
+        </td>
+		<td>
+        	<span id="beerAlcohol">0.54</span>
+      	</td>
+		<td>
+        	<span id="totalBeerAlcohol"></span>
+      	</td>
+	</tr>
+    
+    <!-- Product 2 row -->
+	<tr>
+		<td class="centerCell">
+        	<input type="number" min="0" step="1" class="qtyInput" id="qtyWine" value="0">
+      	</td>
+		<td class="leftCell">Wine
+      	</td>
+		<td>
+        	<span id="wineAlcohol">0.6</span>
+	    </td>
+		<td>
+        	<span id="totalWineAlcohol"></span>
+      	</td>
+	</tr>
+	<!--product 3 row -->
+	<tr>
+			<td class="centerCell">
+				<input type="number" min="0" step="1" class="qtyInput" id="qtyShot" value="0">
+			  </td>
+			<td class="leftCell">Shots
+			  </td>
+			<td>
+				<span id="shotAlcohol">0.6</span>
+			</td>
+			<td>
+				<span id="totalShotAlcohol"></span>
+			  </td>
+		</tr>
+	<br>
+
+
+
+    
+    <!-- Total row -->
+	<tr>
+		<td colspan="3">
+			<br>
+			<br>
+        	<strong>Grand Total Alcohol:</strong>
+        </td>
+		<td>
+		<br>
+        	<span id="grandTotal"></span>
+    </td>
+	</tr>
+</table>
+<br>
+
+<table width="500">
+	<!-- The table header row -->
+	<tr>
+		<th class="centerCell">Your Weight in Pounds</th>
+		<th class="leftCell">Hours Since Your First Drink</th>
+		<th> Your Blood Alcohol content (BAC) is </th>
+		
+	</tr>
+
+	<tr>
+		<td class="centerCell">
+        	<input type="number" min="150" step="1" class="qtyInput" id="qtyWeight" value="150">
+      	</td>
+		<td class="leftCell">
+			   <input type="number" min="0" step="1" class="qtyInput" Id="qtyTime" value="0">
+
+		</td> 
+		<td>
+				<span id="BACount" ></span> %
+	  </td>      
+	</tr>
+
+</body>
+</html>
